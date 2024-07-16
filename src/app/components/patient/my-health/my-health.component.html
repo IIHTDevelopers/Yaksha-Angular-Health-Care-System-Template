@@ -1,0 +1,30 @@
+<div *ngIf="patient" class="my-health-container">
+    <h2>My Health Details</h2>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+    <div>
+        <label>Name: </label>
+        <span>{{ patient.name }}</span>
+    </div>
+    <div>
+        <label>Age: </label>
+        <span>{{ patient.age }}</span>
+    </div>
+    <div>
+        <label>Contact Details: </label>
+        <span>{{ patient.contactDetails }}</span>
+    </div>
+    <div>
+        <label>Medical History: </label>
+        <span>{{ patient.medicalHistory }}</span>
+    </div>
+    <div>
+        <label>Current Medications: </label>
+        <span>{{ patient.currentMedications }}</span>
+    </div>
+    <div>
+        <label>Assigned Regimens: </label>
+        <span>{{ patient.assignedRegimens }}</span>
+    </div>
+</div>

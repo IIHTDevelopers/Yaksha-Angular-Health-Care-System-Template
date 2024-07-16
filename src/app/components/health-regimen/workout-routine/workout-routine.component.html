@@ -1,0 +1,43 @@
+<div class="workout-routine-container">
+    <h2>Workout Routines</h2>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+    <button (click)="createWorkoutRoutine()" class="btn">Create New Workout Routine</button>
+
+    <ul class="workout-routine-list">
+        <li *ngFor="let workoutRoutine of workoutRoutinesWithPatientNames"
+            (click)="selectWorkoutRoutine(workoutRoutine)">
+            Workout Routine for {{ workoutRoutine.patientName }}
+        </li>
+    </ul>
+
+    <div *ngIf="selectedWorkoutRoutine" class="workout-routine-details">
+        <h3>Workout Routine Details</h3>
+        <div *ngIf="selectedPatient">
+            <h4>Patient Details</h4>
+            <div>
+                <label>Name: </label>
+                <span>{{ selectedPatient.name }}</span>
+            </div>
+            <div>
+                <label>Age: </label>
+                <span>{{ selectedPatient.age }}</span>
+            </div>
+            <div>
+                <label>Contact Details: </label>
+                <span>{{ selectedPatient.contactDetails }}</span>
+            </div>
+        </div>
+        <div>
+            <label>Patient ID: </label>
+            <input [(ngModel)]="selectedWorkoutRoutine.patientId" placeholder="Patient ID" readonly>
+        </div>
+        <div>
+            <label>Routine:</label>
+            <textarea [(ngModel)]="routineText" placeholder="Routine"></textarea>
+        </div>
+        <button (click)="updateWorkoutRoutine(selectedWorkoutRoutine)" class="btn">Update Workout Routine</button>
+        <button (click)="deleteWorkoutRoutine(selectedWorkoutRoutine)" class="btn">Delete Workout Routine</button>
+    </div>
+</div>
