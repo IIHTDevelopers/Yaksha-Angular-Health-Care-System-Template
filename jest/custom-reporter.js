@@ -134,7 +134,7 @@ const writeTextFiles = function (result, outputFiles, cb) {
   var XMLHttpRequest = require("xhr2");
   var xhr = new XMLHttpRequest();
   var url =
-    "https://yaksha-prod-sbfn.azurewebsites.net/api/YakshaMFAEnqueue?code=jSTWTxtQ8kZgQ5FC0oLgoSgZG7UoU9Asnmxgp6hLLvYId/GW9ccoLw==";
+    "https://compiler.techademy.com/v1/mfa-results/push";
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onreadystatechange = function () {
